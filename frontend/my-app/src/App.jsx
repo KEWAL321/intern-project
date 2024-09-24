@@ -10,7 +10,7 @@ function App() {
     setTodoData(e.target.value);
   };
   const Add = async () => {
-    await fetch("http://localhost:3000/todos", {
+    await fetch("https://intern-project-backend-pkzf.onrender.com/todos", {
       method: "POST",
       headers: {
         Accept: "application/json",
@@ -24,10 +24,10 @@ function App() {
 
   const fetchTodos = async () => {
     setTodoData("");
-    await fetch("http://localhost:3000/todos")
+    await fetch("https://intern-project-backend-pkzf.onrender.com/todos")
       .then((res) => res.json())
       .then((data) => setAll_Todos(data));
-    const res = await fetch("http://localhost:3000/todos");
+    const res = await fetch("https://intern-project-backend-pkzf.onrender.com/todos");
     const data = await res.json();
     if (JSON.stringify(data) !== JSON.stringify(all_todos)) {
       setAll_Todos(data);
@@ -35,7 +35,7 @@ function App() {
   };
 
   const deleteTodo = async (id) => {
-    await fetch(`http://localhost:3000/todos/${id}`, {
+    await fetch(`https://intern-project-backend-pkzf.onrender.com/todos/${id}`, {
       method: "DELETE",
       headers: {
         Accept: "application/json",

@@ -25,7 +25,7 @@ main()
   .catch((err) => console.log(err));
 
 async function main() {
-  await mongoose.connect(dbUrl);
+  await mongoose.connect(process.env.DB_URL);
 }
 
 app.listen(port, () => {
